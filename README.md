@@ -1,1 +1,2 @@
 # Browsit
+The purpose of this project is to demonstrate how to integrate PyQt5 with QML by creating a Python class that can be accessed and manipulated within QML. This example illustrates the process of defining properties in Python, registering them with QML, and interacting with these properties within a QML script, showcasing the seamless interoperability between Python and QML for creating dynamic user interfaces.
