@@ -20,6 +20,12 @@ Ever thought of having a browser that does not save your data? A browser with it
 
 We are open to suggestions and welcome contributions to make Browsit a better browser. If you have ideas or would like to contribute, please feel free to reach out or submit a pull request.
 
+# Contributors
+- Shashanka Shekhar Sharma
+- Chaitanya Singh Negi
+- Aaryan Anand
+- Hrishikesh Sarma
+
 ---
 
 ### Getting Started
@@ -28,5 +34,13 @@ To get started with Browsit, follow these steps:
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/LocalHost3000/Browsit.git
+   git clone https://github.com/LocalHost3000/Browsit.git](https://github.com/AaryanAnand10/Browsit.git
+   ```
+2. Install the required dependencies:
+   ```sh
+   pip install -r requirements.txt
+   ```
+3. Run the application:
+   ```sh
+   python browsit.py
    ```
