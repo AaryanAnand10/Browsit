@@ -1,2 +1,32 @@
 # Browsit
-The purpose of this project is to demonstrate how to integrate PyQt5 with QML by creating a Python class that can be accessed and manipulated within QML. This example illustrates the process of defining properties in Python, registering them with QML, and interacting with these properties within a QML script, showcasing the seamless interoperability between Python and QML for creating dynamic user interfaces.
+
+Ever thought of having a browser that does not save your data? A browser with its own chatbot? A browser where you can make your notes as well? Team LocalHost3000 presents **Browsit**, a browser with an easy switch between search engines and a better UI, making your browsing experience better than ever before.
+
+## Features
+
+- **Note-taking on the Go**: Take notes while browsing without the need for additional applications.
+- **AskIt Chatbot**: Ask questions to our state-of-the-art Chatbot powered by Llama3 for instant answers.
+- **Switch Between Search Engines**: Seamlessly switch between different search engines for more comprehensive search results.
+- **Dark Theme UI**: Enjoy a better browsing experience with our dark theme user interface.
+
+## Tech Stack
+
+- **Python Libraries**: 
+  - `os`
+  - `PyQT6`
+  - `sys`
+
+## Contribution
+
+We are open to suggestions and welcome contributions to make Browsit a better browser. If you have ideas or would like to contribute, please feel free to reach out or submit a pull request.
+
+---
+
+### Getting Started
+
+To get started with Browsit, follow these steps:
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/LocalHost3000/Browsit.git
+   ```
