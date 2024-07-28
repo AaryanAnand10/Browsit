@@ -3,3 +3,4 @@ https://github.com/AaryanAnand10/Browsit/pull/3
 https://github.com/AaryanAnand10/Browsit/pull/4
 https://github.com/AaryanAnand10/Browsit/pull/5
 https://github.com/AaryanAnand10/Browsit/pull/6
+https://github.com/AaryanAnand10/Browsit/pull/7
