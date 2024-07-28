@@ -51,7 +51,6 @@ class HoverSidebar(QWidget):
     def set_normal_width(self, width):
         self.normal_width = width
         self.setFixedWidth(self.normal_width)
-        
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -95,7 +94,28 @@ class MainWindow(QMainWindow):
             }
         """)  # Change background to the image
         self.showMaximized()
-    
+
+        # Create shortcuts for navigating back and forward
+        self.shortcutPrevPage = QShortcut(QKeySequence("Alt+Left"), self)
+        self.shortcutPrevPage.activated.connect(self.navigate_back)
+
+        self.shortcutForwPage = QShortcut(QKeySequence("Alt+Right"), self)
+        self.shortcutForwPage.activated.connect(self.navigate_forward)
+
+        self.shortcutUrlFocus = QShortcut(QKeySequence("Ctrl+/"), self)
+        self.shortcutUrlFocus.activated.connect(self.focus_url_bar)
+
+        self.shortcutNewTab = QShortcut(QKeySequence("Ctrl+T"), self)
+        self.shortcutNewTab.activated.connect(self.add_new_tab)
+
+        # Create the Ctrl + W shortcut for closing the current tab
+        self.shortcutCloseTab = QShortcut(QKeySequence("Ctrl+W"), self)
+        self.shortcutCloseTab.activated.connect(self.close_current_tab)
+
+        self.shortcutReload = QShortcut(QKeySequence("Ctrl+R"), self)
+        self.shortcutReload.activated.connect(self.reload_tab)
+        
+
         # Create the central widget and set layout
         self.central_widget = QWidget(self)
         self.setCentralWidget(self.central_widget)
@@ -234,12 +254,23 @@ class MainWindow(QMainWindow):
         search_url = f"https://duckduckgo.com/?q={query}"
         self.navigate_to_url(QUrl(search_url))
 
+    def navigate_back(self):
+        current_tab = self.tab_widget.currentWidget()
+        if isinstance(current_tab, QWebEngineView):
+            current_tab.back()
+
+    def navigate_forward(self):
+        current_tab = self.tab_widget.currentWidget()
+        if isinstance(current_tab, QWebEngineView):
+            current_tab.forward()
+
     def navigate_home(self):
     # Use the add_new_tab method to open the custom home page
         file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "index.html"))
         local_url = QUrl.fromLocalFile(file_path)
         self.tab_widget.currentWidget().setUrl(local_url)
         self.tab_widget.setTabText(self.tab_widget.currentIndex(), "Home Page")
+
 
     def navigate_to_url(self, url=None):
         if not url:
@@ -252,6 +283,9 @@ class MainWindow(QMainWindow):
         if isinstance(current_tab, QWebEngineView):
             current_tab.setUrl(url)
 
+    def focus_url_bar(self):
+        self.url_bar.setFocus()
+
     def open_chatbot(self):
         chatbot_url = "https://6bd5b0f458be7729a5.gradio.live"
         self.add_new_tab(chatbot_url)
@@ -263,4 +297,3 @@ if __name__ == "__main__":
     mainWin = MainWindow()
     mainWin.show()
     sys.exit(app.exec())
-
